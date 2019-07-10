@@ -11,6 +11,7 @@ namespace Ingeniux.Monitoring
 {
 	public class MonitorOptions
 	{
+		public string OutputDirectory { get; set; }
 		public string ConnectionString { get; set; }
 		public NLog.Logger Logger { get; set; }
 	}
@@ -25,7 +26,8 @@ namespace Ingeniux.Monitoring
 	{
 		public string Name { get; set; }
 		public Regex Regex { get; set; }
-		public bool ReportDocument { get; set; }
+		public bool TrackChanges { get; set; }
+		public int VersionLimit { get; set; }
 	}
 
 	[SettingsSerializeAsAttribute(SettingsSerializeAs.Xml)]

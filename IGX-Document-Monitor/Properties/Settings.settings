@@ -6,14 +6,16 @@
       <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;DocumentSettings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
   &lt;DocumentSetting&gt;
-    &lt;Name&gt;Pages&lt;/Name&gt;
-    &lt;Regex&gt;^x(\\d)+$&lt;/Regex&gt;
-    &lt;ReportDocument&gt;false&lt;/ReportDocument&gt;
+    &lt;Name&gt;Page Version&lt;/Name&gt;
+    &lt;Regex&gt;^PageVersion_x(\d)+.*$&lt;/Regex&gt;
+    &lt;TrackChanges&gt;true&lt;/TrackChanges&gt;
+    &lt;VersionLimit&gt;10&lt;/VersionLimit&gt;
   &lt;/DocumentSetting&gt;
   &lt;DocumentSetting&gt;
     &lt;Name&gt;Assets&lt;/Name&gt;
-    &lt;Regex&gt;^a/(\\d)+$&lt;/Regex&gt;
-    &lt;ReportDocument&gt;false&lt;/ReportDocument&gt;
+    &lt;Regex&gt;^a/(\d)+$&lt;/Regex&gt;
+    &lt;TrackChanges&gt;false&lt;/TrackChanges&gt;
+    &lt;VersionLimit&gt;0&lt;/VersionLimit&gt;
   &lt;/DocumentSetting&gt;
 &lt;/DocumentSettings&gt;</Value>
     </Setting>

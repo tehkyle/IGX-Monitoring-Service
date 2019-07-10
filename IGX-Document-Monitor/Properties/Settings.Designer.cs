@@ -28,14 +28,16 @@ namespace IGX_Document_Monitor.Properties {
         [global::System.Configuration.DefaultSettingValueAttribute(@"<?xml version=""1.0"" encoding=""utf-16""?>
 <DocumentSettings xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"">
   <DocumentSetting>
-    <Name>Pages</Name>
-    <Regex>^x(\\d)+$</Regex>
-    <ReportDocument>false</ReportDocument>
+    <Name>Page Version</Name>
+    <Regex>^PageVersion_x(\d)+.*$</Regex>
+    <TrackChanges>true</TrackChanges>
+    <VersionLimit>10</VersionLimit>
   </DocumentSetting>
   <DocumentSetting>
     <Name>Assets</Name>
-    <Regex>^a/(\\d)+$</Regex>
-    <ReportDocument>false</ReportDocument>
+    <Regex>^a/(\d)+$</Regex>
+    <TrackChanges>false</TrackChanges>
+    <VersionLimit>0</VersionLimit>
   </DocumentSetting>
 </DocumentSettings>")]
         public global::System.Xml.XmlDocument DocumentSettings {

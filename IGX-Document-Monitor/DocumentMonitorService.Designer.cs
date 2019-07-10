@@ -1,6 +1,6 @@
 ﻿namespace IGX_Document_Monitor
 {
-	partial class DocumentMonitor
+	partial class DocumentMonitorService
 	{
 		/// <summary> 
 		/// Required designer variable.

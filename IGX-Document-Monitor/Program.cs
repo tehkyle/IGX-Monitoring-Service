@@ -17,7 +17,7 @@ namespace IGX_Document_Monitor
 			ServiceBase[] ServicesToRun;
 			ServicesToRun = new ServiceBase[]
 			{
-				new DocumentMonitor()
+				new DocumentMonitorService()
 			};
 			ServiceBase.Run(ServicesToRun);
 		}
