@@ -62,15 +62,23 @@ namespace Ingeniux.Monitoring
 			if (!Directory.Exists(DocumentsDirectory))
 				Directory.CreateDirectory(DocumentsDirectory);
 
-			Store = new DocumentStore();
-			Store.ParseConnectionString(Options.ConnectionString);
-			Store.Initialize();
-			Store.Changes()
-				.ForAllDocuments()
-				.Subscribe(change =>
-				{
-					ParseChange(change);
-				});
+			try
+			{
+				Store = new DocumentStore();
+				Store.ParseConnectionString(Options.ConnectionString);
+				Store.Initialize();
+				Store.Changes()
+					.ForAllDocuments()
+					.Subscribe(change =>
+					{
+						Log($"Change Detected: {change.Id}", LogLevel.Debug);
+						ParseChange(change);
+					});
+			}
+			catch (Exception e)
+			{
+				Log(e.ToString(), LogLevel.Error);
+			}
 
 			Log("Listening...");
 		}
